@@ -1,0 +1,16 @@
+section {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  /* color: #fff; */
+}
+
+ul {
+  list-style: none;
+}
+
+@media screen and (max-width: 420px) {
+  section {
+    width: 90%;
+  }
+}

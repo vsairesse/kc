@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KnowledgeCenter</title>
+  <link rel="shortcut icon" href="./assets/img/logo.svg" type="image/x-icon" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+    integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/signup.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <header>
+    <a href="./" class="simple-logo">
+      <img src="./assets/img/logo.svg" width="40" alt="logo" />
+    </a>
+    <a href="./index.html" class="logo">
+      <img src="./assets/img/logo-text.png" width="300" alt="logo" />
+    </a>
+    <a href="./signup.html" class="btn-credit"><i class="la la-plus"></i>Cadastrar-se</a>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="">Artigos</a>
+      <a href="">Podcast</a>
+      <a href="./about.html">Sobre Nós</a>
+    </nav>
+    <button class="hamburger hamburger--spin btn-menu" type="button" aria-label="Menu" aria-controls="navigation">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </header>
+  <main>
+    <div class="menu">
+      <nav>
+        <a href="./signup.html" class="btn-credit">Cadastrar-se</a>
+        <a href="./">Home</a>
+        <a href="">Artigos</a>
+        <a href="">Podcast</a>
+        <a href="./about.html">Sobre Nós</a>
+      </nav>
+      <div class="rs">
+        <a href=""><i class="la la-lg la-facebook"></i></a>
+        <a href=""><i class="la la-lg la-instagram"></i></a>
+        <a href=""><i class="la la-lg la-youtube"></i></a>
+      </div>
+    </div>
+    <form>
+      <h1>Formulário de cadastro</h1>
+      <label for="course">Curso:</label>
+      <select name="s-course" id="s-course"></select>
+      <div class="form-group">
+        <input type="text" name="nome" id="nome" required autofocus placeholder="Nome" />
+        <input type="text" name="apelido" id="apelido" required placeholder="Apelido" />
+      </div>
+      <div class="form-group">
+        <input type="text" name="tel" required placeholder="Telefone" />
+        <input type="text" name="email" placeholder="Email (opcional)" />
+      </div>
+      <button type="submit" id="btn-submit">Enviar</button>
+    </form>
+    <a href="https://wa.me/+258872081978" id="btn-whatsapp"><i class="la la-lg la-whatsapp"></i></a>
+  </main>
+
+  <footer>
+    <div class="f-left">
+      <img src="./assets/img/logo.svg" width="50" height="50" alt="logo" />
+    </div>
+    <div class="f-right">
+      <div>
+        <h2>Sobre nós</h2>
+        <ul>
+          <li><a href="./about.html">Missão, Visão e valores</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Parceiros</h2>
+        <ul>
+          <li><a href="">Crediinvest</a></li>
+          <li><a href="">PowerController</a></li>
+          <li><a href="">Hermaak</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="tel:872081978">(+258) 872081978</a></li>
+          <li><a href="">Fernão Veloso nº 343</a></li>
+        </ul>
+
+        <div class="rs">
+          <a href=""><i class="la la-lg la-facebook"></i></a>
+          <a href=""><i class="la la-lg la-instagram"></i></a>
+          <a href=""><i class="la la-lg la-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const url = new URL(window.location.href);
+
+    const course_ = url.searchParams.get("c");
+
+    let csx = "<option value=''>---Seleccione o curso---</option>";
+
+    for (const c of courses) {
+      csx += `<option value='${c.id}'>${c.label}</option>`;
+    }
+
+    document.querySelector("#s-course").innerHTML = csx;
+
+    if (course_) {
+      document.querySelector("#s-course").value = course_;
+    }
+
+    document.querySelector("form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      document.querySelector("#btn-submit").disabled = true;
+      const form = new FormData(e.target);
+
+      const nome = form.get("nome");
+      const apelido = form.get("apelido");
+      const bi = form.get("bi");
+      const nuit = form.get("nuit");
+      const valor = parseFloat(form.get("valor"));
+      const tel = form.get("tel");
+      const email = form.get("email");
+      const desc = form.get("desc");
+
+      const data = { nome, apelido, bi, nuit, valor, tel, email, desc };
+
+      try {
+        const res = await fetch(api_url + "/crediinvest/create", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            app: "crediinvest",
+            // user: localStorage.getItem("user"),
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (res.status === 200) {
+          const data = await res.json();
+          console.log(data);
+          alert("Obrigado, entraremos em contacto.");
+          e.target.reset();
+          window.location.href =
+            api_url + "/crediinvest/" + data.docName + ".pdf";
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+      document.querySelector("#btn-submit").disabled = false;
+    });
+  </script>
+</body>
+
+</html>
