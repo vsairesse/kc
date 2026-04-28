@@ -28,7 +28,7 @@ async function awakeAPI() {
   }
 }
 
-const baseUrl = window.location.origin
+const baseUrl = window.location.origin + '/kc/'
 console.log( window.location)
 
 const components = {
