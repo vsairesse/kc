@@ -27,11 +27,14 @@ async function awakeAPI() {
   }
 }
 
-let  baseUrl = window.location.origin;
+let baseUrl = window.location.origin;
 
-if(baseUrl.includes('https')) {
+if (baseUrl.includes('https')) {
   baseUrl += '/kc/'
 }
+
+const url = new URL(window.location.href)
+const urlParam = url.searchParams.get('c') ? '?c=' + url.searchParams.get('c') : ''
 
 const components = {
   header: `
@@ -43,7 +46,7 @@ const components = {
       <img src="${baseUrl}/assets/img/logo.svg" width="40" alt="logo" />
       <span>Knowledge Center</span>
     </a>
-    <a href="./signup.html" class="btn-credit"><i class="la la-plus"></i>Cadastrar-se</a>
+    <a href="${baseUrl + '/signup.html' + urlParam}" class="btn-credit"><i class="la la-plus"></i>Cadastrar-se</a>
     <nav>
       <a href="">Home</a>
       <a href="">Artigos</a>

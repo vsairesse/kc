@@ -13,7 +13,7 @@ function getCourses() {
         <div class="top" style="background: ${color}">
           <!--<strong><i class='la la-graduation-cap'></i> Curso</strong>-->
           <h3>${c.label}</h3>
-          <a href="./pages/plans/${c.plan || ""}">Plano do curso</i></a>
+          <a href="./pages/plans/${c.plan || ""}?c=${c.id}">Plano do curso</i></a>
         </div>
         <div class="bottom">
           <p>EM APENAS ${c.duration}</p>

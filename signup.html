@@ -109,9 +109,9 @@
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
   <script>
-    const url = new URL(window.location.href);
+    const urls = new URL(window.location.href);
 
-    const course_ = url.searchParams.get("c");
+    const course_ = urls.searchParams.get("c");
 
     let csx = "<option value=''>---Seleccione o curso---</option>";
 
@@ -138,8 +138,10 @@
       const tel = form.get("tel");
       const email = form.get("email");
       const desc = form.get("desc");
+      const course = form.get('s-course');
+      return
 
-      const data = { nome, apelido, bi, nuit, valor, tel, email, desc };
+      const data = { nome, apelido, bi, nuit, valor, tel, email, desc, course };
 
       try {
         const res = await fetch(api_url + "/kc/create", {
