@@ -27,7 +27,11 @@ async function awakeAPI() {
   }
 }
 
-const baseUrl = window.location.origin + ''
+let  baseUrl = window.location.origin;
+
+if(baseUrl.includes('https')) {
+  baseUrl += '/kc/'
+}
 
 const components = {
   header: `
