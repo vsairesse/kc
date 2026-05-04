@@ -142,11 +142,11 @@
       const data = { nome, apelido, bi, nuit, valor, tel, email, desc };
 
       try {
-        const res = await fetch(api_url + "/crediinvest/create", {
+        const res = await fetch(api_url + "/kc/create", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            app: "crediinvest",
+            app: "kc",
             // user: localStorage.getItem("user"),
           },
           body: JSON.stringify(data),
@@ -157,8 +157,6 @@
           console.log(data);
           alert("Obrigado, entraremos em contacto.");
           e.target.reset();
-          window.location.href =
-            api_url + "/crediinvest/" + data.docName + ".pdf";
         }
       } catch (error) {
         console.log(error);
