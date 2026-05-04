@@ -11,7 +11,7 @@ hamburger.addEventListener("click", function () {
   menuHidden = !menuHidden;
 });
 
-awakeAPI();
+// awakeAPI();
 
 setInterval(async () => {
   awakeAPI();
@@ -22,14 +22,12 @@ const numColor = 255;
 async function awakeAPI() {
   try {
     const res = await fetch(api_url);
-    console.log(res);
   } catch (error) {
     console.log(error);
   }
 }
 
-const baseUrl = window.location.origin + '/kc/'
-console.log( window.location)
+const baseUrl = window.location.origin + ''
 
 const components = {
   header: `
