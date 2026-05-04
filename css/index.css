@@ -11,7 +11,6 @@ main>h2 {
 }
 
 h1 {
-  /* Dark */
   color: #aaa;
   font-weight: lighter;
   font-size: 24px;
@@ -32,8 +31,6 @@ main form input {
   padding-left: 50px;
   outline: none;
   background: url(../assets/img/search-solid.svg) no-repeat 20px center/20px;
-  background-color: #fff;
-  border: 1px solid #fafafa;
   border-radius: 7px;
   margin: 10px 0;
   transition: all .1s ease-in;
@@ -44,8 +41,6 @@ main form input {
 }
 
 main form input:focus {
-  box-shadow: 0 0 1px 1px #ddd;
-  /* Dark */
   box-shadow: 0 0 1px 1px #1a1a1a;
 }
 
@@ -86,16 +81,16 @@ ul li a {
 }
 
 .course {
-  height: 400px;
+  height: 340px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   background-color: #fff;
-  border: 1px solid #ddd;
   border-radius: 10px;
-  /* Dark */
-  border-color: #111;
   background-color: #3a3a3a;
+  border: none;
+
+
 }
 
 .course>div {
@@ -134,7 +129,7 @@ ul li a {
   display: block;
   padding: 15px;
   width: 270px;
-  background-color: #fff;
+  background-color: #1a1a1a;
   color: var(--color1);
   outline: none;
   border: none;
@@ -142,9 +137,7 @@ ul li a {
   font-weight: bolder;
   margin: 20px auto 70px auto;
   border-radius: 10px;
-  /* font-size: 14px; */
-  /* Dark */
-  background-color: #1a1a1a;
+
 }
 
 @media screen and (max-width: 420px) {
@@ -168,4 +161,30 @@ ul li a {
   .courses {
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   }
+}
+
+@media (prefers-color-scheme: light) {
+  .course {
+    border: none;
+    border-color: #111;
+    background-color: #fff;
+  }
+
+  h1 {
+    color: #444;
+  }
+
+  main form input {
+    background-color: #fff;
+    border: 1px solid #fafafa;
+  }
+
+  main form input:focus {
+     box-shadow: 0 0 1px 1px #ddd;
+  }
+
+  .btn-more {
+    background-color: #fff;
+  }
+
 }

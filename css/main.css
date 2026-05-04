@@ -13,11 +13,11 @@ body {
   margin: 0;
   font-family: nunito;
   box-sizing: border-box;
-  background-color: #eee;
+  background-color: #1e1e1e;
+
   min-height: 100vh;
   margin: 0;
-  /* Dark */
-  background-color: #1e1e1e;
+  padding: 0;
 }
 
 a {
@@ -29,8 +29,10 @@ i {
   margin: auto 5px;
 }
 
-h1, h2, label {
-  color:#aaa;
+h1,
+h2,
+label {
+  color: #aaa;
 }
 
 button {
@@ -60,16 +62,16 @@ video {
   display: flex;
 }
 
-.form-group > * {
+.form-group>* {
   flex: 1;
   width: calc(95%);
   margin: 5px;
   box-sizing: border-box;
 }
+
 /* Header */
 
 header {
-  background-color: #fffffff8;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,13 +82,10 @@ header {
   z-index: 5;
   height: 60px;
   padding: 10px;
-  /* Light */
-  box-shadow: 0 1px 1px 1px #e7e7e7;
-  border-bottom: 1px solid #ccc;
-  /* Dark */
-   box-shadow: none;
-  border-bottom: 2px solid #1a1a1a;
+  border-bottom: 1px solid #111;
   background-color: #1e1e1e;
+
+
 
   color: #fff;
 }
@@ -221,11 +220,11 @@ main {
 /* Footer */
 footer {
   min-height: 200px;
-  background-color: #fff;
   display: flex;
   justify-content: space-around;
-  /* Dark */
   background-color: #0b0a0a;
+
+
 }
 
 footer ul {
@@ -245,7 +244,7 @@ footer h2 {
   color: #aaa;
 }
 
-footer > div {
+footer>div {
   display: flex;
 }
 
@@ -263,7 +262,7 @@ footer .f-right {
   justify-content: space-around;
 }
 
-footer .f-right > div {
+footer .f-right>div {
   margin: 20px;
 }
 
@@ -323,12 +322,42 @@ footer .rs {
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-  background-color: var(--color1); /* troque pela cor que quiser */
+  background-color: var(--color1);
+  /* troque pela cor que quiser */
 }
 
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-  width: 40px; /* largura das linhas */
-  height: 2px; /* espessura */
+  width: 40px;
+  /* largura das linhas */
+  height: 2px;
+  /* espessura */
+}
+
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #eee;
+
+  }
+
+  h1,
+  h2,
+  label {
+    color: #444;
+  }
+
+  header {
+    box-shadow: none;
+    border-bottom: 2px solid #1a1a1a;
+    background-color: #fffffff8;
+
+    border-bottom: none;
+  }
+
+  footer {
+    background-color: #fff;
+
+  }
 }

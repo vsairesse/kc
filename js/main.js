@@ -83,7 +83,7 @@ const components = {
         <h2>Contacto</h2>
         <ul>
           <li><a href="">(+258) 872081978</a></li>
-          <li><a href="mailto:knowledgecentermz@gmail.com">knowledgecentermz@gmail.com</a></li>
+          <li><a href="mailto:knowledgecenter.kc@gmail.com">knowledgecenter.kc@gmail.com</a></li>
           <li><a href="">Tech Space nº 404</a></li>
         </ul>
 
