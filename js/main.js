@@ -4,10 +4,10 @@ const api_url = window.location.protocol.toLowerCase().includes("s")
 
 let menuHidden = true;
 
-var hamburger = document.querySelector(".hamburger");
-hamburger.addEventListener("click", function () {
+const hamburger = document.querySelector("#btn-menu");
+hamburger.addEventListener("click", (e) => {
   hamburger.classList.toggle("is-active");
-  $(".menu").animate({ left: menuHidden ? 0 : "-80%" }, 500);
+  $(".menu").animate({ left: menuHidden ? 0 : "-81%" }, 500);
   menuHidden = !menuHidden;
 });
 
